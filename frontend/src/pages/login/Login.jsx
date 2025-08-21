@@ -33,7 +33,7 @@ export default function Login() {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center">
+    <section className="relative min-h-screen flex items-center justify-center">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

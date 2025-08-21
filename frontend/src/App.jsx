@@ -15,6 +15,7 @@ import Orders from "./pages/dashboard/Orders";
 import DashboardHome from "./pages/dashboard/DashboardHome";
 import OrderPlaced from "./pages/dashboard/orders/OrderPlaced";
 import PaymentHistory from "./pages/dashboard/PaymentHistory";
+import ScrollToTop from "./ScrollToTop";
 
 const PageWrapper = ({ children }) => {
   return (
@@ -23,7 +24,7 @@ const PageWrapper = ({ children }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -40 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="h-full"
+      className="min-h-screen"
     >
       {children}
     </motion.div>
@@ -128,6 +129,7 @@ const AnimatedRoutes = () => {
 const App = () => {
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <AnimatedRoutes />
       <Toaster position="top-right" reverseOrder={false} />
     </BrowserRouter>
