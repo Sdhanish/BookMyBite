@@ -1,4 +1,3 @@
-// src/pages/dashboard/Payments.jsx
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { usePayForItems } from "../../hooks/usePayments";
@@ -23,17 +22,22 @@ export default function PaymentsPage() {
   const [orderId, setOrderId] = useState(null);
   const [paymentId, setPaymentId] = useState(null);
 
-  const items = cartData?.cart?.items || [];
+  const items = useMemo(
+    () => (cartData?.cart?.items || []).filter(item => item.recipe),
+    [cartData]
+  );
 
   const totalAmount = useMemo(
-    () => items.reduce((sum, item) => sum + item.recipe.price * item.quantity, 0),
+    () =>
+      items.reduce((sum, item) => sum + item.recipe.price * item.quantity, 0),
     [items]
   );
 
   const startPayment = async () => {
+    if (items.length === 0) return alert("No valid items to pay for.");
+
     try {
       const res = await payForItems(items);
-      // Save everything we need for the payment step
       setClientSecret(res.clientSecret);
       setOrderId(res.order._id);
       setPaymentId(res.payment._id);
@@ -71,11 +75,7 @@ export default function PaymentsPage() {
       ) : (
         // Mount Elements AFTER we have clientSecret
         <Elements stripe={stripePromise} options={{ clientSecret }}>
-          <CheckoutForm
-            orderId={orderId}
-            paymentId={paymentId}
-            navigate={navigate}
-          />
+          <CheckoutForm orderId={orderId} paymentId={paymentId} navigate={navigate} />
         </Elements>
       )}
     </div>
