@@ -85,43 +85,34 @@ export default function DashboardHome() {
         ))}
       </motion.div>
 
-      {/* Pagination Controls */}
-      {totalPages > 1 && (
-        <div className="flex justify-center items-center gap-3 mt-8">
-          {/* Prev */}
-          <button
-            onClick={prevPage}
-            disabled={currentPage === 1}
-            className="px-3 py-2 rounded-lg border text-gray-700 hover:bg-gray-100 disabled:opacity-50"
-          >
-            ‹
-          </button>
+     {/* Minimalistic Pagination Controls */}
+{totalPages > 1 && (
+  <div className="flex justify-center items-center gap-3 mt-8">
+    {/* Prev */}
+    <button
+      onClick={prevPage}
+      disabled={currentPage === 1}
+      className="px-3 py-2 rounded-lgtext-gray-700 hover:bg-gray-100 disabled:opacity-50"
+    >
+      ‹
+    </button>
 
-          {/* Page Numbers */}
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => setCurrentPage(page)}
-              className={`px-4 py-2 rounded-lg border transition ${
-                currentPage === page
-                  ? "bg-red-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              {page}
-            </button>
-          ))}
+    {/* Current Page */}
+    <span className="px-3 py-1 rounded-lg text-xs border bg-red-100 text-red-500">
+      {currentPage} / {totalPages}
+    </span>
 
-          {/* Next */}
-          <button
-            onClick={nextPage}
-            disabled={currentPage === totalPages}
-            className="px-3 py-2 rounded-lg border text-gray-700 hover:bg-gray-100 disabled:opacity-50"
-          >
-            ›
-          </button>
-        </div>
-      )}
+    {/* Next */}
+    <button
+      onClick={nextPage}
+      disabled={currentPage === totalPages}
+      className="px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 disabled:opacity-50"
+    >
+      ›
+    </button>
+  </div>
+)}
+
     </div>
   );
 }
