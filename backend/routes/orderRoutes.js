@@ -11,7 +11,6 @@ router.get("/", authMiddleware, async (req, res) => {
     const orders = await Order.find({ user: req.user._id })
       .populate("items.recipe")
       .sort({ createdAt: -1 });
-
     res.status(200).json(orders);
   } catch (err) {
     console.error("Error fetching orders:", err);

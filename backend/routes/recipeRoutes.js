@@ -13,6 +13,9 @@ router.get("/", authMiddleware, async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
+
+
 // Get all recipes without authentication(products)
 router.get("/public", async (req, res) => {
   try {

@@ -26,15 +26,25 @@ const Banner = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <motion.div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/banner-image.jpeg')" }}
-        initial={{ scale: 1.2 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 8, ease: "easeOut" }}
-      />
+<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+  {/* Animated Background */}
+<motion.div
+  className="absolute inset-0 bg-cover bg-center will-change-transform"
+  style={{
+    backgroundImage: "url('/banner-image.jpeg')",
+    backgroundColor: "black", // fallback if image fails
+  }}
+  initial={{ scale: 1.2 }}   // start zoomed in
+  animate={{ scale: 1 }}     // zoom out to normal
+  transition={{
+    duration: 6,             // adjust speed (bigger = slower)
+    ease: "easeOut",         // smooth slow-down
+  }}
+/>
+
+
+
+
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60" />

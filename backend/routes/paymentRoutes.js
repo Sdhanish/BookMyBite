@@ -94,7 +94,6 @@ router.post("/confirm", authMiddleware, async (req, res) => {
     if (!order || !payment) {
       return res.status(404).json({ message: "Order or Payment not found" });
     }
-
     // Clear from cart ONLY the items that were in this order
     const recipeIds = order.items.map(i => i.recipe);
     await Cart.updateOne(

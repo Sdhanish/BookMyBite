@@ -36,7 +36,7 @@ router.post("/register", upload.single("profilePic"), async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const profilePic = req.file
       ? `/uploads/${req.file.filename}`
-      : "/uploads/default.png"; // you can keep a default
+      : "/uploads/default.png"; 
 
     const user = await User.create({
       name,
@@ -48,7 +48,7 @@ router.post("/register", upload.single("profilePic"), async (req, res) => {
 
     const token = signToken(user._id);
 
-    // ✅ Build absolute URL
+    // Build absolute URL
     const profilePicUrl = `${req.protocol}://${req.get("host")}${user.profilePic}`;
 
     res.status(201).json({
@@ -80,7 +80,7 @@ router.post("/login", async (req, res) => {
 
     const token = signToken(user._id);
 
-    // ✅ Build absolute URL
+    // Build absolute URL
     const profilePicUrl = `${req.protocol}://${req.get("host")}${user.profilePic}`;
 
     res.json({

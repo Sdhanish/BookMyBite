@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 
+body {
+  @apply bg-black;
+}
 
 @layer base {
   body {

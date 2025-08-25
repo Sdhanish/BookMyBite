@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ShoppingBag, LogOut, LayoutDashboard, UtensilsCrossedIcon } from "lucide-react";
+import { LogOut, LayoutDashboard, UtensilsCrossedIcon, User } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { handleLogout } from "../hooks/useLogout";
 
@@ -31,10 +31,18 @@ const Header = () => {
               <UtensilsCrossedIcon className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className={`text-2xl font-bold tracking-wider ${isScrolled ? "text-gray-900" : "text-white"}`}>
+              <h1
+                className={`text-2xl font-bold tracking-wider ${
+                  isScrolled ? "text-gray-900" : "text-white"
+                }`}
+              >
                 BookMyBite
               </h1>
-              <p className={`text-xs -mt-1 ${isScrolled ? "text-gray-600" : "text-gray-300"}`}>
+              <p
+                className={`text-xs -mt-1 ${
+                  isScrolled ? "text-gray-600" : "text-gray-300"
+                }`}
+              >
                 Delicious food delivered
               </p>
             </div>
@@ -44,27 +52,41 @@ const Header = () => {
           {!user ? (
             <Link
               to="/login"
-              className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+              className={`flex items-center gap-2 font-medium transition-colors duration-200 ${
+                isScrolled
+                  ? "text-gray-900 hover:text-red-600"
+                  : "text-white hover:text-red-400"
+              }`}
             >
-              Login
+              <User className="h-5 w-5" />
+              <span>Login</span>
             </Link>
           ) : (
             <>
               {/* Desktop */}
               <div className="hidden md:flex items-center gap-6">
+                {/* Dashboard */}
                 <Link
                   to="/dashboard"
-                  className={`flex gap-2 ${isScrolled ? "text-gray-900 hover:text-red-600" : "text-white hover:text-red-500"}`}
+                  className={`flex gap-2 items-center ${
+                    isScrolled
+                      ? "text-gray-900 hover:text-red-600"
+                      : "text-white hover:text-red-500"
+                  }`}
                 >
                   <LayoutDashboard className="h-5 w-5" /> Dashboard
                 </Link>
 
-                <div className="flex items-center gap-3">
+                {/* Avatar + Logout */}
+                <div className="flex items-center gap-5">
                   {user?.profilePic ? (
                     <img
-                      src={user.profilePic}
+                      src={user?.profilePic || "/fallback.jpg"}
                       alt="Profile"
                       className="h-8 w-8 rounded-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = "/fallback.jpg";
+                      }}
                     />
                   ) : (
                     <div className="h-8 w-8 rounded-full bg-red-600 text-white flex items-center justify-center font-semibold">
@@ -74,7 +96,11 @@ const Header = () => {
 
                   <button
                     onClick={() => handleLogout(logout, navigate)}
-                    className={`${isScrolled ? "text-gray-900 hover:text-red-600" : "text-white hover:text-red-500"} flex items-center gap-1`}
+                    className={`flex items-center gap-2 ${
+                      isScrolled
+                        ? "text-gray-900 hover:text-red-600"
+                        : "text-white hover:text-red-500"
+                    }`}
                   >
                     <LogOut className="h-5 w-5" />
                     <span className="hidden sm:inline">Logout</span>
@@ -84,19 +110,33 @@ const Header = () => {
 
               {/* Mobile */}
               <div className="flex md:hidden items-center gap-4">
-                <Link className={`${isScrolled ? "text-gray-900" : "text-white"}`} to="/dashboard">
+                <Link
+                  className={`${
+                    isScrolled ? "text-gray-900" : "text-white"
+                  }`}
+                  to="/dashboard"
+                >
                   <LayoutDashboard className="h-6 w-6" />
                 </Link>
 
                 {user?.profilePic ? (
-                  <img src={user.profilePic} alt="Profile" className="h-8 w-8 rounded-full object-cover" />
+                  <img
+                    src={user.profilePic}
+                    alt="Profile"
+                    className="h-8 w-8 rounded-full object-cover"
+                  />
                 ) : (
                   <div className="h-8 w-8 rounded-full bg-red-600 text-white flex items-center justify-center font-semibold">
                     {user?.name?.charAt(0).toUpperCase() || "U"}
                   </div>
                 )}
 
-                <button onClick={() => handleLogout(logout, navigate)} className={`${isScrolled ? "text-gray-900" : "text-white"}`}>
+                <button
+                  onClick={() => handleLogout(logout, navigate)}
+                  className={`${
+                    isScrolled ? "text-gray-900" : "text-white"
+                  }`}
+                >
                   <LogOut className="h-6 w-6" />
                 </button>
               </div>

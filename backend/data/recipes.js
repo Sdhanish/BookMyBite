@@ -7,6 +7,7 @@ const recipes = [
     image: "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=400",
     rating: 4.7
   },
+  
   {
     name: "Sushi Platter",
     description: "Assorted sushi rolls with fresh salmon, tuna, and veggies.",

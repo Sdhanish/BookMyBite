@@ -7,7 +7,6 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Auto login from localStorage
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) setUser(JSON.parse(storedUser));
@@ -21,7 +20,6 @@ export const AuthProvider = ({ children }) => {
     setUser(data.user);
   };
 
-  // ✅ Updated register
   const register = async (formData) => {
     const { data } = await axiosInstance.post("/auth/register", formData, {
       headers: {
