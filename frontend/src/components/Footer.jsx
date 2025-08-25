@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="bg-green-600 p-2 rounded-full">
                    <UtensilsCrossedIcon className="h-6 w-6 text-white" />
                 </div>
-                <h4 className="text-xl font-bold">BookMyBite</h4>
+                <h4 className="text-xl font-bold">Book<span className="bg-clip-text text-transparent bg-gradient-to-b from-green-300 to-green-900">My</span>Bite</h4>
               </div>
               <p className="text-gray-400 mb-4 leading-relaxed">
                 Your favorite food delivery service. We bring delicious meals from the best restaurants right to your doorstep, fast and fresh.

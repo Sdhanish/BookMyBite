@@ -51,7 +51,7 @@ export default function DashboardLayout() {
           </div>
           {isOpen && (
             <h1 className="text-xl font-bold text-white tracking-wide">
-              BookMyBite
+                Book<span className="bg-clip-text text-transparent bg-gradient-to-b from-green-300 to-green-900">My</span>Bite
             </h1>
           )}
         </Link>
