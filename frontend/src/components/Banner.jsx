@@ -54,7 +54,7 @@ const Banner = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          Delicious <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-200 via-gray-300 to-green-600">Food</span> Delivered <span className="bg-clip-text text-transparent bg-gradient-to-l from-gray-200 via-gray-300 to-green-600">Fast</span>
+          Delicious <span className="bg-clip-text text-transparent bg-gradient-to-tr from-gray-100 to-green-700">Food</span> Delivered <span className="bg-clip-text text-transparent bg-gradient-to-tl from-gray-100 to-green-700">Fast</span>
         </motion.h2>
 
         <motion.p
