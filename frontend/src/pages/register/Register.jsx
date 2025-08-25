@@ -48,7 +48,7 @@ export default function Register() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+            "url('/banner-2.jpg')",
         }}
       />
       {/* Dark overlay */}
@@ -72,10 +72,10 @@ export default function Register() {
               type="text"
               placeholder="Full Name"
               {...register("name")}
-              className="w-full rounded-xl px-4 py-2 focus:ring-1 focus:ring-white/70 focus:outline-none transition bg-white/50"
+              className="w-full rounded-xl px-4 py-2 focus:ring-1 focus:ring-green-300 focus:outline-none transition bg-white/50"
             />
             {errors.name && (
-              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+              <p className="text-green-300 text-sm mt-1">{errors.name.message}</p>
             )}
           </div>
 
@@ -85,10 +85,10 @@ export default function Register() {
               type="email"
               placeholder="Email"
               {...register("email")}
-              className="w-full rounded-xl px-4 py-2 focus:ring-1 focus:ring-white/70 focus:outline-none transition bg-white/50"
+              className="w-full rounded-xl px-4 py-2 focus:ring-1 focus:ring-green-300 focus:outline-none transition bg-white/50"
             />
             {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+              <p className="text-green-300 text-sm mt-1">{errors.email.message}</p>
             )}
           </div>
 
@@ -98,7 +98,7 @@ export default function Register() {
               type={showPassword ? "text" : "password"}
               placeholder="Password"
               {...register("password")}
-              className="w-full rounded-xl px-4 py-2 pr-10 focus:ring-1 focus:ring-white/70 focus:outline-none transition bg-white/50"
+              className="w-full rounded-xl px-4 py-2 pr-10 focus:ring-1 focus:ring-green-300 focus:outline-none transition bg-white/50"
             />
             <span
               className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-white"
@@ -107,7 +107,7 @@ export default function Register() {
               {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </span>
             {errors.password && (
-              <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
+              <p className="text-green-300 text-sm mt-1">{errors.password.message}</p>
             )}
           </div>
 
@@ -117,10 +117,10 @@ export default function Register() {
               type="text"
               placeholder="Phone number"
               {...register("phone")}
-              className="w-full rounded-xl px-4 py-2 focus:ring-1 focus:ring-white/70 focus:outline-none transition bg-white/50"
+              className="w-full rounded-xl px-4 py-2 focus:ring-1 focus:ring-green-300 focus:outline-none transition bg-white/50"
             />
             {errors.phone && (
-              <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+              <p className="text-green-300 text-sm mt-1">{errors.phone.message}</p>
             )}
           </div>
 
@@ -133,11 +133,11 @@ export default function Register() {
               className="w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 
                          file:rounded-lg file:border-0 
                          file:text-sm file:font-medium
-                         file:bg-gray-300 file:text-gray-700
-                         hover:file:bg-gray-400 cursor-pointer"
+                         file:bg-green-200 file:text-green-900
+                         hover:file:bg-green-300 cursor-pointer"
             />
             {errors.profilePic && (
-              <p className="text-red-500 text-sm mt-1">{errors.profilePic.message}</p>
+              <p className="text-green-300 text-sm mt-1">{errors.profilePic.message}</p>
             )}
           </div>
 
@@ -146,7 +146,7 @@ export default function Register() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-3/4 px-2 bg-gradient-to-b from-red-500 via-red-600 to-red-700 text-white py-2 rounded-xl font-medium hover:opacity-90 transition disabled:opacity-60 flex justify-center"
+              className="w-3/4 px-2 bg-gradient-to-b from-green-500 via-green-600 to-green-700 text-white py-2 rounded-xl font-medium hover:opacity-90 transition disabled:opacity-60 flex justify-center"
             >
               {isSubmitting ? (
                 <Loader className="animate-spin h-5 w-5 text-white" />

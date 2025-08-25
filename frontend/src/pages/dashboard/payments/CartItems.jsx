@@ -19,7 +19,7 @@ export default function CartItems({ items }) {
               </p>
             </div>
           </div>
-          <span className="text-lg font-bold text-red-600">
+          <span className="text-lg font-bold text-green-600">
             ₹{item.recipe.price * item.quantity}
           </span>
         </div>

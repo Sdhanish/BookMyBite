@@ -100,13 +100,13 @@ export default function OrderPlaced() {
               </ul>
             </div>
             <p className="font-semibold text-lg mt-3">
-              Total: <span className="text-red-600">₹{order.totalAmount}</span>
+              Total: <span className="text-green-600">₹{order.totalAmount}</span>
             </p>
           </div>
 
           <button
             onClick={() => navigate("/dashboard/orders")}
-            className="mt-6 w-full bg-gradient-to-b from-red-400 via-red-500 to-red-500 text-white py-2 rounded-xl hover:bg-red-600 transition font-semibold"
+            className="mt-6 w-full bg-gradient-to-b from-green-400 via-green-500 to-green-600 text-white py-2 rounded-xl hover:bg-green-700 transition font-semibold"
           >
             View All Orders
           </button>

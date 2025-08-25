@@ -8,7 +8,7 @@ const Footer = () => {
             {/* About Column */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="bg-red-600 p-2 rounded-full">
+                <div className="bg-green-600 p-2 rounded-full">
                    <UtensilsCrossedIcon className="h-6 w-6 text-white" />
                 </div>
                 <h4 className="text-xl font-bold">BookMyBite</h4>
@@ -50,7 +50,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-start space-x-3 text-gray-400">
                   <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm">BookMyBite - Leeyo Food Hub ,Pathanamthitta</span>
+                  <span className="text-sm">BookMyBite - Food Hub , Pathanamthitta</span>
                 </div>
               </div>
             </div>

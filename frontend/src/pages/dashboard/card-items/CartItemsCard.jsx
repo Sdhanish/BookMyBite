@@ -26,7 +26,7 @@ export default function CartItemCard({
           <p className="text-gray-500 text-sm">
             ₹{item.recipe.price} x {item.quantity}
           </p>
-          <p className="font-bold text-red-600">
+          <p className="font-bold text-green-600">
             ₹{item.recipe.price * item.quantity}
           </p>
         </div>

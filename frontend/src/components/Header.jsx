@@ -27,17 +27,20 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="bg-red-600 p-2 rounded-full">
+            <div className="bg-green-600 p-2 rounded-full">
               <UtensilsCrossedIcon className="h-6 w-6 text-white" />
             </div>
-            <div>
+            <div className="space-y-0">
               <h1
-                className={`text-2xl font-bold tracking-wider ${
-                  isScrolled ? "text-gray-900" : "text-white"
-                }`}
-              >
-                BookMyBite
-              </h1>
+  className={`text-xl font-bold tracking-widest ${
+    isScrolled
+      ? "text-gray-900 bg-none" // solid black on scroll
+      : "bg-clip-text text-transparent bg-gradient-to-b from-gray-50 via-gray-100 to-gray-300" // gradient when top
+  }`}
+>
+  Book<span className="bg-clip-text text-transparent bg-gradient-to-b from-green-500 to-green-700">My</span>Bite
+</h1>
+
               <p
                 className={`text-xs -mt-1 ${
                   isScrolled ? "text-gray-600" : "text-gray-300"
@@ -54,8 +57,8 @@ const Header = () => {
               to="/login"
               className={`flex items-center gap-2 font-medium transition-colors duration-200 ${
                 isScrolled
-                  ? "text-gray-900 hover:text-red-600"
-                  : "text-white hover:text-red-400"
+                  ? "text-gray-900 hover:text-green-600"
+                  : "text-white hover:text-green-400"
               }`}
             >
               <User className="h-5 w-5" />
@@ -70,8 +73,8 @@ const Header = () => {
                   to="/dashboard"
                   className={`flex gap-2 items-center ${
                     isScrolled
-                      ? "text-gray-900 hover:text-red-600"
-                      : "text-white hover:text-red-500"
+                      ? "text-gray-900 hover:text-green-600"
+                      : "text-white hover:text-green-500"
                   }`}
                 >
                   <LayoutDashboard className="h-5 w-5" /> Dashboard
@@ -89,7 +92,7 @@ const Header = () => {
                       }}
                     />
                   ) : (
-                    <div className="h-8 w-8 rounded-full bg-red-600 text-white flex items-center justify-center font-semibold">
+                    <div className="h-8 w-8 rounded-full bg-green-600 text-white flex items-center justify-center font-semibold">
                       {user?.name?.charAt(0).toUpperCase() || "U"}
                     </div>
                   )}
@@ -98,8 +101,8 @@ const Header = () => {
                     onClick={() => handleLogout(logout, navigate)}
                     className={`flex items-center gap-2 ${
                       isScrolled
-                        ? "text-gray-900 hover:text-red-600"
-                        : "text-white hover:text-red-500"
+                        ? "text-gray-900 hover:text-green-600"
+                        : "text-white hover:text-green-500"
                     }`}
                   >
                     <LogOut className="h-5 w-5" />
@@ -126,7 +129,7 @@ const Header = () => {
                     className="h-8 w-8 rounded-full object-cover"
                   />
                 ) : (
-                  <div className="h-8 w-8 rounded-full bg-red-600 text-white flex items-center justify-center font-semibold">
+                  <div className="h-8 w-8 rounded-full bg-green-600 text-white flex items-center justify-center font-semibold">
                     {user?.name?.charAt(0).toUpperCase() || "U"}
                   </div>
                 )}

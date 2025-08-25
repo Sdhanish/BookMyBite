@@ -63,7 +63,7 @@ const Receipes = () => {
   if (error) {
     return (
       <section className="py-16 flex justify-center items-center">
-        <p className="text-red-500">{error}</p>
+        <p className="text-green-500">{error}</p>
       </section>
     );
   }
@@ -119,12 +119,12 @@ const Receipes = () => {
 
    <div className="relative">
     {/* Custom Prev Button */}
-    <button className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white shadow rounded-full hover:bg-red-600 hover:text-white transition">
+    <button className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white shadow rounded-full hover:bg-green-600 hover:text-white transition">
       ‹
     </button>
 
     {/* Custom Next Button */}
-    <button className="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white shadow rounded-full hover:bg-red-600 hover:text-white transition">
+    <button className="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white shadow rounded-full hover:bg-green-600 hover:text-white transition">
       ›
     </button>
 
@@ -174,7 +174,7 @@ const Receipes = () => {
               <h4 className="text-lg sm:text-xl font-bold text-black">
                 {item.name}
               </h4>
-              <span className="text-sm font-bold text-red-600">
+              <span className="text-sm font-bold text-green-600">
                 &#8377;{item.price}
               </span>
             </div>
@@ -185,7 +185,7 @@ const Receipes = () => {
             {/* Actions */}
             <motion.button
               onClick={handleExplore}
-              className="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200"
+              className="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

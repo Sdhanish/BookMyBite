@@ -25,7 +25,6 @@ const recipesWithCartStatus = (recipes) =>
     addToCartMutation.mutate(item._id, {
       onSuccess: () => {
         toast.success(`${item.name} added to cart!`);
-        navigate("/dashboard/cart");
       },
       onError: (error) => {
         const msg = error?.response?.data?.message || "Failed to add to cart";

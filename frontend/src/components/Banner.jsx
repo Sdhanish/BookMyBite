@@ -26,39 +26,35 @@ const Banner = () => {
   };
 
   return (
-<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-  {/* Animated Background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Animated Background */}
+      {/* Animated Background */}
 <motion.div
   className="absolute inset-0 bg-cover bg-center will-change-transform"
   style={{
-    backgroundImage: "url('/banner-image.jpeg')",
-    backgroundColor: "black", // fallback if image fails
+    backgroundImage: "url('/banner-2.jpg')",
   }}
   initial={{ scale: 1.2 }}   // start zoomed in
-  animate={{ scale: 1 }}     // zoom out to normal
+  animate={{ scale: 1 }}     // slowly zoom out to normal
   transition={{
-    duration: 6,             // adjust speed (bigger = slower)
+    duration: 6,             // adjust speed
     ease: "easeOut",         // smooth slow-down
   }}
 />
 
 
-
-
-
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <motion.h2
-          className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 leading-tight"
+          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-green-600 to-green-700"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          Delicious Food
-          <span className="text-red-500"> Delivered Fast</span>
+          Delicious <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-200 via-gray-300 to-green-600">Food</span> Delivered <span className="bg-clip-text text-transparent bg-gradient-to-l from-gray-200 via-gray-300 to-green-600">Fast</span>
         </motion.h2>
 
         <motion.p
@@ -71,12 +67,15 @@ const Banner = () => {
           right to your doorstep in minutes.
         </motion.p>
 
-        <button
+        <motion.button
           onClick={handleOrderNow}
-          className="bg-red-600 hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
+          className="px-8 py-3 rounded-lg font-semibold text-white shadow-lg transform transition-all duration-300 hover:scale-105 bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:from-green-600 hover:via-green-700 hover:to-green-800"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
         >
           Order Now
-        </button>
+        </motion.button>
       </div>
     </section>
   );

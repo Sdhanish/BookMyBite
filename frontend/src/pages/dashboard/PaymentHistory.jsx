@@ -27,7 +27,7 @@ export default function PaymentHistory() {
   return (
     <div className="p-4 sm:p-6 space-y-6">
       <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex gap-2">
-       <Wallet2Icon className="h-8 w-8 text-red-600" /> Payment History
+       <Wallet2Icon className="h-8 w-8 text-green-600" /> Payment History
       </h1>
 
       {payments.length === 0 ? (

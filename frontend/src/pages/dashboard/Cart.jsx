@@ -49,14 +49,14 @@ export default function CartPage() {
     <div className="p-6">
       {/* Heading */}
       <h1 className="text-3xl font-bold mb-6 flex items-center gap-2">
-        <ShoppingCart className="h-8 w-8 text-red-600" />
+        <ShoppingCart className="h-8 w-8 text-green-600" />
         Your Cart
       </h1>
 
       {/* Loader */}
       {isLoading ? (
         <div className="flex items-center justify-center h-64">
-          <Loader2 className="animate-spin h-10 w-10 text-red-600" />
+          <Loader2 className="animate-spin h-10 w-10 text-green-600" />
         </div>
       ) : validItems.length === 0 ? (
         // Empty state
@@ -80,7 +80,7 @@ export default function CartPage() {
           {/* Checkout All */}
           <div className="mt-8 flex flex-col sm:flex-row sm:justify-between sm:items-center border-t pt-4 gap-4">
             <h2 className="text-xl font-bold">
-              Total: <span className="text-red-600">₹{totalPrice}</span>
+              Total: <span className="text-green-600">₹{totalPrice}</span>
             </h2>
             <button
               onClick={() => handleCheckout(validItems)}

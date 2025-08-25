@@ -38,7 +38,7 @@ export default function Orders() {
 
   return (
     <div className="p-6 space-y-4">
-      <h1 className="text-3xl font-bold mb-6 flex gap-2"><ShoppingBag className="h-8 w-8 text-red-600" />Your Orders</h1>
+      <h1 className="text-3xl font-bold mb-6 flex gap-2"><ShoppingBag className="h-8 w-8 text-green-600" />Your Orders</h1>
 
       {sortedOrders?.length === 0 ? (
         <p className="text-gray-500">No orders yet. Go place one!</p>
@@ -54,7 +54,7 @@ export default function Orders() {
             <div className="flex justify-center mt-4">
               <button
                 onClick={handleLoadMore}
-                className="text-red-600 flex items-center"
+                className="text-green-600 flex items-center"
               >
                 Load More <ChevronsDown/>
               
