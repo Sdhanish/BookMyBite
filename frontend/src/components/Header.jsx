@@ -38,7 +38,7 @@ const Header = () => {
       : "bg-clip-text text-transparent bg-gradient-to-b from-gray-50 via-gray-100 to-gray-300" // gradient when top
   }`}
 >
-  Book<span className="bg-clip-text text-transparent bg-gradient-to-b from-green-500 to-green-700">My</span>Bite
+  Book<span className="bg-clip-text text-transparent bg-gradient-to-b from-green-100 to-green-200">My</span>Bite
 </h1>
 
               <p
